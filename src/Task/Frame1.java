@@ -99,6 +99,7 @@ public class Frame1 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -124,6 +125,7 @@ public class Frame1 extends javax.swing.JFrame {
             }
         });
 
+        inputTgl.setToolTipText("YYYY-MMM-DD");
         inputTgl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputTglActionPerformed(evt);
@@ -302,7 +304,16 @@ public class Frame1 extends javax.swing.JFrame {
     }//GEN-LAST:event_inputAlamatActionPerformed
 
     private void buttonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddActionPerformed
+        
+    String nama = inputNama.getText();
+    String nik = inputNIK.getText();
+    String tgl = inputTgl.getText();
+    String alamat = inputAlamat.getText();
+    if(nama.equals("")||nik.equals("")||tgl.equals("")||alamat.equals("")){
+        JOptionPane.showMessageDialog(this, "Data is not valid (empty). Please try again.");
+    }else{
         addData();
+    }
     }//GEN-LAST:event_buttonAddActionPerformed
 
     private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
